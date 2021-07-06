@@ -1,0 +1,26 @@
+{
+  "name": "webpackdemo",
+  "version": "1.0.0",
+  "description": "Webpack原理",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Estellanini/Webpack-Demo.git"
+  },
+  "author": "Estellanini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Estellanini/Webpack-Demo/issues"
+  },
+  "homepage": "https://github.com/Estellanini/Webpack-Demo#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.42.1",
+    "webpack-cli": "^4.7.2"
+  }
+}
