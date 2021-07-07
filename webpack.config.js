@@ -7,6 +7,8 @@
 
 //resolve用来拼接绝对路径的方法
 const {resolve}=require('path');
+const HtmlWebpackPlugin=require('html-webpack-plugin');
+
 module.exports={
     //webpack配置
     //入口起点
@@ -25,7 +27,7 @@ module.exports={
             //详细loader配置
             {
                 //匹配哪些文件
-                 test:/\.less$/,
+                test:/\.less$/,
                 //使用哪些loader
                 use:[
                     //use数组种loader执行顺序，从右到左，从下到上，依次执行
@@ -46,6 +48,14 @@ module.exports={
     //plugins的配置
     plugins:[
         //详细plugins的配置
+        //html-webpack-plugin
+        //npm i html-webpack-plugin -D
+        //功能：默认会创建一个空的HTML，自动引入打包输出的所有资源（JS/CSS）
+        //需求：需要右结构的HTML文件
+        new HtmlWebpackPlugin({
+            //复制'./src/index.html'文件，并自动引入打包输出的所有资源（JS/CSS）,不要再手动引入了，否则会报错
+            template:'./src/index.html'
+        })
     ],
     //模式
     mode:'development',//开发模式
