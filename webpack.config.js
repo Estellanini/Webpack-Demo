@@ -6,6 +6,7 @@
  */
 
 //resolve用来拼接绝对路径的方法
+const {resolve}=require('path');
 module.exports={
     //webpack配置
     //入口起点
@@ -22,6 +23,24 @@ module.exports={
     module:{
         rules:[
             //详细loader配置
+            {
+                //匹配哪些文件
+                 test:/\.less$/,
+                //使用哪些loader
+                use:[
+                    //use数组种loader执行顺序，从右到左，从下到上，依次执行
+                    //创建style标签，将js中的样式资源插入进行，添加到head种生效
+                    //npm i style-loader -D
+                    'style-loader',
+                    //将CSS文件变成commonjs模块加载到js种，里面内容是样式字符串
+                    //npm i css-loader -D
+                    'css-loader',
+                    //npm i less-loader -D
+                    'less-loader'
+                ]
+
+            }
+
         ]
     },
     //plugins的配置
